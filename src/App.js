@@ -1,24 +1,27 @@
 import logo from './logo.svg';
-import './App.css';
+import './vendor/bootstrap/css/bootstrap.min.css';
+import './vendor/animate.css/animate.min.css';
+import './css/style.css';
+import './scss/styles.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/fixed/Layout';
+import Home from './components/Home';
+import AudioPodcast from './components/AudioPodcast';
+import VideoPodcast from './components/VideoPodcast';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="video-podcast" element={<VideoPodcast />} />
+          <Route path="audio-podcast" element={<AudioPodcast />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
