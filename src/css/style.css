@@ -701,6 +701,10 @@ nav li:has(.active) {
   bottom: 50px;
 }
 
+.left-alignment button {
+  right: 1.5rem;
+}
+
 .project-title {
   width: 30%;
   height: max-content;
