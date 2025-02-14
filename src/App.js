@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './vendor/bootstrap/css/bootstrap.min.css';
 import './vendor/animate.css/animate.min.css';
 import './css/style.css';
@@ -9,6 +8,10 @@ import Home from './components/Home';
 import AudioPodcast from './components/AudioPodcast';
 import VideoPodcast from './components/VideoPodcast';
 import PageNotFound from './components/PageNotFound';
+import AudioEpisode from './components/AudioEpisode';
+import VideoEpisode from './components/VideoEpisode';
+import Aktivnosti from './components/Aktivnosti';
+import Prezentacije from './components/Prezentacije';
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="video-podcast" element={<VideoPodcast />} />
           <Route path="audio-podcast" element={<AudioPodcast />} />
+          <Route path="aktivnosti" element={<Aktivnosti />} />
+          <Route path="prezentacije" element={<Prezentacije/>} />
+          <Route path="audio-episode-1" element={<AudioEpisode />} />
+          <Route path="video-episode-1" element={<VideoEpisode />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
